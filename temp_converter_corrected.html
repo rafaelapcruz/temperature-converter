@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<h1>Temperature converter between Celsius and Kelvin (for now...)</h1>
+		<p>Input the temperature valor and the correspondent temperature scale.</p>
+		
+		<form>
+			<label for="temperature">Temperature value</label>
+			<input type="text" id="temperature" name="temperature">
+			<input type="radio" name="scale" id="scale_kelvin" value="kelvin">Kelvin
+			<input type="radio" name="scale" id="scale_celsius" value="celsius">Celsius
+			<!-- <input type="submit" name="submit" onClick="getParam()" value="Convert">-->
+		</form>
+
+		<button onclick="calcTemp();">Convert</button>
+		<p id="answer"></p>
+
+		
+		<script type="text/javascript">
+
+		function calcTemp() {
+
+			var temp = parseFloat(document.getElementById("temperature").value);
+			var result;
+				if (document.getElementById('scale_kelvin').checked) {
+					if (temp < 0) {
+						result = "Below absolute zero"
+					} else {
+						result = (temp - 273.15).toFixed(2);
+						result += ' degree Celsius';
+					}
+				} else if (document.getElementById('scale_celsius').checked) {
+					result = (temp + 273.15).toFixed(2);
+						if (result < 0) {
+						result = "Below absolute zero"
+					} else {
+						result += " Kelvin";
+					}
+				} else {
+					result = "Choose the correspondent temperature scale";
+				}
+				
+				document.getElementById("answer").innerHTML = result;
+			}
+			
+		</script>
+	</body>
+</html>
