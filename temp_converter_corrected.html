@@ -49,27 +49,27 @@
 
 			var temp = parseFloat(document.getElementById("temperature").value);
 			var result;
-				if (document.getElementById('input_scale_kelvin').checked) {
+				if (document.getElementById('input_scale_kelvin').selected) {
 					if (temp < 0) {
 						result = "Below absolute zero";
-					} else if (document.getElementById('output_scale_celsius').checked) {
+					} else if (document.getElementById('output_scale_celsius').selected) {
 						result = (temp - 273.15).toFixed(2);
 						result += ' degree Celsius';
-					} else if (document.getElementById('output_scale_fahrenheit').checked) {
+					} else if (document.getElementById('output_scale_fahrenheit').selected) {
 						result = (temp * 1.8 - 459.67).toFixed(2);
 						result += ' degree Fahrenheit';
-					} else if (document.getElementById('output_scale_kelvin').checked) {
+					} else if (document.getElementById('output_scale_kelvin').selected) {
 						result = temp + " Kelvin";
 					}
-				} else if (document.getElementById('input_scale_celsius').checked) {
-					if (document.getElementById('output_scale_kelvin').checked) {
+				} else if (document.getElementById('input_scale_celsius').selected) {
+					if (document.getElementById('output_scale_kelvin').selected) {
 						result = (temp + 273.15).toFixed(2);
 						if (result < 0) {
 							result = "Below absolute zero";
 						} else {
 							result += " Kelvin";
 						}
-					} else if (document.getElementById('output_scale_fahrenheit').checked) {
+					} else if (document.getElementById('output_scale_fahrenheit').selected) {
 						result = (temp * 1.8 + 32).toFixed(2);
 						if (result < -459.67) {
 							result = "Below absolute zero";
@@ -77,15 +77,15 @@
 							result += " degree Fahrenheit";
 						}
 					}
-				} else if (document.getElementById('input_scale_fahrenheit').checked) {
-					if (document.getElementById('output_scale_kelvin').checked) {
+				} else if (document.getElementById('input_scale_fahrenheit').selected) {
+					if (document.getElementById('output_scale_kelvin').selected) {
 						result = ((temp + 459.67) / 1.8).toFixed(2);
 						if (result < 0) {
 							result = "Below absolute zero";
 						} else {
 							result += " Kelvin";
 						}
-					} else if (document.getElementById('output_scale_celsius').checked) {
+					} else if (document.getElementById('output_scale_celsius').selected) {
 						result = ((temp - 32) / 1.8).toFixed(2);
 						if (result < -273.15) {
 							result = "Below absolute zero";
