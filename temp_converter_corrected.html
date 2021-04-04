@@ -14,19 +14,22 @@
 		<form>
 			<label for="temperature">Temperature value</label>
 			<input type="text" id="temperature" name="temperature">
-			<input type="radio" name="scale" id="input_scale_kelvin" value="kelvin">Kelvin
-			<input type="radio" name="scale" id="input_scale_celsius" value="celsius">Celsius
-			<input type="radio" name="scale" id="input_scale_fahrenheit" value="celsius">Fahrenheit
-			<!-- <input type="submit" name="submit" onClick="getParam()" value="Convert">-->
+			<select id="scale-input">
+				<option name="scale" id="input_scale_kelvin" value="kelvin">Kelvin</option>
+				<option name="scale" id="input_scale_celsius" value="celsius">Celsius</option>
+				<option name="scale" id="input_scale_fahrenheit" value="celsius">Fahrenheit</option>
+			</select>
 		</form>
 		</div>
 
 		<div id="box-output">
 		<form>
-			<label>Convert to:</label>
-			<input type="radio" name="scale" id="output_scale_kelvin" value="kelvin">Kelvin
-			<input type="radio" name="scale" id="output_scale_celsius" value="celsius">Celsius
-			<input type="radio" name="scale" id="output_scale_fahrenheit" value="celsius">Fahrenheit
+			<label for="scale-output">Convert to:</label>
+			<select id="scale-output">
+				<option name="scale" id="output_scale_kelvin" value="kelvin">Kelvin</option>
+				<option name="scale" id="output_scale_celsius" value="celsius">Celsius</option>
+				<option name="scale" id="output_scale_fahrenheit" value="celsius">Fahrenheit</option>
+			</select>
 		</form>
 		</div>
 
