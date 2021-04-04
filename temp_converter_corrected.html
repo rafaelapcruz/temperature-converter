@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
+		<title>Temperature converter</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
+		<div id="main">
 		<h1>Temperature converter</h1>
 
 		<p>Input the temperature valor in the textbox to the left and select the correspondent temperature scale. Select the temperature scale to convert it to.</p>
 		
+		<div id="box-input">
 		<form>
 			<label for="temperature">Temperature value</label>
 			<input type="text" id="temperature" name="temperature">
@@ -16,18 +19,27 @@
 			<input type="radio" name="scale" id="input_scale_fahrenheit" value="celsius">Fahrenheit
 			<!-- <input type="submit" name="submit" onClick="getParam()" value="Convert">-->
 		</form>
+		</div>
 
+		<div id="box-output">
 		<form>
 			<label>Convert to:</label>
 			<input type="radio" name="scale" id="output_scale_kelvin" value="kelvin">Kelvin
 			<input type="radio" name="scale" id="output_scale_celsius" value="celsius">Celsius
 			<input type="radio" name="scale" id="output_scale_fahrenheit" value="celsius">Fahrenheit
 		</form>
+		</div>
 
-		<button onclick="calcTemp();">Convert</button>
+		<div id="button">
+		<button class="btn" onclick="calcTemp();">Convert</button>
+		</div>
+
+		<div id="box-answer">
 		<p id="answer"></p>
+		</div>
 
-		
+		</div>
+
 		<script type="text/javascript">
 
 		function calcTemp() {
@@ -36,32 +48,48 @@
 			var result;
 				if (document.getElementById('input_scale_kelvin').checked) {
 					if (temp < 0) {
-						result = "Below absolute zero"
+						result = "Below absolute zero";
 					} else if (document.getElementById('output_scale_celsius').checked) {
 						result = (temp - 273.15).toFixed(2);
 						result += ' degree Celsius';
 					} else if (document.getElementById('output_scale_fahrenheit').checked) {
-						result = (temp * 1,8 - 459.67).toFixed(2);
+						result = (temp * 1.8 - 459.67).toFixed(2);
 						result += ' degree Fahrenheit';
+					} else if (document.getElementById('output_scale_kelvin').checked) {
+						result = temp + " Kelvin";
 					}
 				} else if (document.getElementById('input_scale_celsius').checked) {
 					if (document.getElementById('output_scale_kelvin').checked) {
 						result = (temp + 273.15).toFixed(2);
 						if (result < 0) {
-							result = "Below absolute zero"	
+							result = "Below absolute zero";
 						} else {
 							result += " Kelvin";
 						}
-					else if (document.getElementById('output_scale_fahrenheit').checked){
-						result = (temp × 1,8 + 32).toFixed(2);
+					} else if (document.getElementById('output_scale_fahrenheit').checked) {
+						result = (temp * 1.8 + 32).toFixed(2);
 						if (result < -459.67) {
-							result = "Below absolute zero"
+							result = "Below absolute zero";
 						} else {
-							result += " Kelvin";
+							result += " degree Fahrenheit";
 						}
 					}
 				} else if (document.getElementById('input_scale_fahrenheit').checked) {
-					result = (temp + 273.15).toFixed(2);
+					if (document.getElementById('output_scale_kelvin').checked) {
+						result = ((temp + 459.67) / 1.8).toFixed(2);
+						if (result < 0) {
+							result = "Below absolute zero";
+						} else {
+							result += " Kelvin";
+						}
+					} else if (document.getElementById('output_scale_celsius').checked) {
+						result = ((temp - 32) / 1.8).toFixed(2);
+						if (result < -273.15) {
+							result = "Below absolute zero";
+						} else {
+							result += " degree Celsius";
+						}
+					}
 				} else {
 					result = "Choose the correspondent temperature scale";
 				}
