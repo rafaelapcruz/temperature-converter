@@ -1,8 +1,14 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
 #main {
 	margin: auto;
 	padding: 20px;
 	width: 90%;
-	background-color: grey;
+	height: 500px;
+	background-color: rgb(200 200 200);
 }
 
 #box-input {
@@ -29,13 +35,11 @@
 	width: 50%;
 	text-align: center;
 	clear: both;
-	background-color: green;
 }
 
 #box-answer {
 	padding: 20px;
 	margin: 10px;
-	background-color: red;
 }
 
 .btn {
