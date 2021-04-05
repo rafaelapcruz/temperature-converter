@@ -35,7 +35,7 @@ h1 + p {
 
 #button {
 	margin: 0 10px;
-	padding: 50px 20px 20px 20px;
+	padding: 10px 20px;
 	width: auto;
 	display: inline;
 	float: left;
@@ -51,12 +51,12 @@ h1 + p {
 	text-align: center;
 }
 
-/* formatação do botão sem Bootstrap
-.answer {
-	padding: 15px 25px;
+/* formatação do botão sem Bootstrap*/
+.btn {
+	padding: 10px 25px;
 	border: none;
 	border-radius: 5px;
 	font-size: 1em;
 	text-align: center;
 	background-color: orange;
-} */
+}

@@ -31,9 +31,10 @@ function calcFahrenheit(temp) {
 function calcTemp() {
 
 	var temp = parseFloat(document.getElementById("temperature").value);
-		//console.log(temp);
-	var result;
 	var input_scale;
+	//console.log(temp);
+	var result;
+	
 		if (document.getElementById('input_kelvin').selected) {
 			input_scale = " Kelvin"
 			if (temp < 0) {
@@ -58,5 +59,6 @@ function calcTemp() {
 		}
 
 	document.getElementById("answer").innerHTML = temp + input_scale + " equals to " + result;
-	document.getElementById("answer-box").setAttribute("class", "btn");
+	document.getElementById("answer-box").setAttribute("class", "alert alert-warning");
+	document.getElementById("answer-box").setAttribute("role", "alert");
 }
