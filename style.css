@@ -8,6 +8,7 @@ p {
 }
 
 #main {
+	font-family: Arial;
 	margin: auto;
 	padding: 20px;
 	width: 90%;
@@ -16,40 +17,45 @@ p {
 }
 
 #input-box {
+	margin: 25px 10px;
 	padding: 20px;
-	margin: 10px;
-	width: 40%;
+	width: auto;
 	display: inline;
 	float: left;
-	background-color: red;
+	/*background-color: red;*/
 }
 
 #output-box {
+	margin: 25px 10px;
 	padding: 20px;
-	margin: 10px;
-	width: 40%;
+	width: auto;
 	display: inline;
 	float: left;
-	background-color: red;
+	/*background-color: red;*/
 }
 
 #button {
-	margin: auto;
-	padding: 20px;
-	width: 50%;
+	margin: 25px 10px;
+	padding: 5px 20px;
+	width: auto;
+	display: inline;
+	float: left;
 	text-align: center;
-	clear: both;
+	/*background-color: red;*/
 }
 
 #answer-box {
-	padding: 20px;
-	margin: 10px;
+	
+	clear: both;
+	margin: auto;
+	width: 60%;
 }
 
 .btn {
-	padding: 15px 50px;
-	border: 2px solid red;
+	padding: 15px 25px;
+	border: none;
 	border-radius: 5px;
 	font-size: 1em;
 	text-align: center;
+	background-color: orange;
 }
