@@ -10,25 +10,25 @@
 
 		<p>Input the temperature valor in the textbox to the left and select the correspondent temperature scale. Select the temperature scale to convert it to.</p>
 		
-		<div id="box-input">
+		<div id="input-box">
 		<form>
-			<label for="temperature">Temperature value</label>
+			<label for="temperature">Temperature value: </label>
 			<input type="text" id="temperature" name="temperature">
-			<select id="scale-input">
-				<option name="scale" id="input_scale_kelvin" value="kelvin">Kelvin</option>
-				<option name="scale" id="input_scale_celsius" value="celsius">Celsius</option>
-				<option name="scale" id="input_scale_fahrenheit" value="celsius">Fahrenheit</option>
+			<select id="input-scale">
+				<option name="scale" id="input_kelvin" value="kelvin">Kelvin</option>
+				<option name="scale" id="input_celsius" value="celsius">Celsius</option>
+				<option name="scale" id="input_fahrenheit" value="celsius">Fahrenheit</option>
 			</select>
 		</form>
 		</div>
 
-		<div id="box-output">
+		<div id="output-box">
 		<form>
-			<label for="scale-output">Convert to:</label>
-			<select id="scale-output">
-				<option name="scale" id="output_scale_kelvin" value="kelvin">Kelvin</option>
-				<option name="scale" id="output_scale_celsius" value="celsius">Celsius</option>
-				<option name="scale" id="output_scale_fahrenheit" value="celsius">Fahrenheit</option>
+			<label for="output-scale">Convert to:</label>
+			<select id="output-scale">
+				<option name="scale" id="output_kelvin" value="kelvin">Kelvin</option>
+				<option name="scale" id="output_celsius" value="celsius">Celsius</option>
+				<option name="scale" id="output_fahrenheit" value="celsius">Fahrenheit</option>
 			</select>
 		</form>
 		</div>
@@ -37,7 +37,7 @@
 		<button class="btn" onclick="calcTemp();">Convert</button>
 		</div>
 
-		<div id="box-answer">
+		<div id="answer-box">
 		<p id="answer"></p>
 		</div>
 
@@ -49,27 +49,27 @@
 
 			var temp = parseFloat(document.getElementById("temperature").value);
 			var result;
-				if (document.getElementById('input_scale_kelvin').selected) {
+				if (document.getElementById('input_kelvin').selected) {
 					if (temp < 0) {
 						result = "Below absolute zero";
-					} else if (document.getElementById('output_scale_celsius').selected) {
+					} else if (document.getElementById('output_celsius').selected) {
 						result = (temp - 273.15).toFixed(2);
 						result += ' degree Celsius';
-					} else if (document.getElementById('output_scale_fahrenheit').selected) {
+					} else if (document.getElementById('output_fahrenheit').selected) {
 						result = (temp * 1.8 - 459.67).toFixed(2);
 						result += ' degree Fahrenheit';
-					} else if (document.getElementById('output_scale_kelvin').selected) {
+					} else if (document.getElementById('output_kelvin').selected) {
 						result = temp + " Kelvin";
 					}
-				} else if (document.getElementById('input_scale_celsius').selected) {
-					if (document.getElementById('output_scale_kelvin').selected) {
+				} else if (document.getElementById('input_celsius').selected) {
+					if (document.getElementById('output_kelvin').selected) {
 						result = (temp + 273.15).toFixed(2);
 						if (result < 0) {
 							result = "Below absolute zero";
 						} else {
 							result += " Kelvin";
 						}
-					} else if (document.getElementById('output_scale_fahrenheit').selected) {
+					} else if (document.getElementById('output_fahrenheit').selected) {
 						result = (temp * 1.8 + 32).toFixed(2);
 						if (result < -459.67) {
 							result = "Below absolute zero";
@@ -77,15 +77,15 @@
 							result += " degree Fahrenheit";
 						}
 					}
-				} else if (document.getElementById('input_scale_fahrenheit').selected) {
-					if (document.getElementById('output_scale_kelvin').selected) {
+				} else if (document.getElementById('input_fahrenheit').selected) {
+					if (document.getElementById('output_kelvin').selected) {
 						result = ((temp + 459.67) / 1.8).toFixed(2);
 						if (result < 0) {
 							result = "Below absolute zero";
 						} else {
 							result += " Kelvin";
 						}
-					} else if (document.getElementById('output_scale_celsius').selected) {
+					} else if (document.getElementById('output_celsius').selected) {
 						result = ((temp - 32) / 1.8).toFixed(2);
 						if (result < -273.15) {
 							result = "Below absolute zero";
