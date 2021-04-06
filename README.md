@@ -1,2 +1,2 @@
 # temp_converter
- Bulding my own temperature converter
+ Building my own temperature converter based on Bootstrap and Javascript.
