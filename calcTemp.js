@@ -32,9 +32,11 @@ function calcTemp() {
 
 	var temp = parseFloat(document.getElementById("temperature").value);
 	var input_scale;
-	//console.log(temp);
+	console.log(temp);
 	var result;
-	
+	if (isNaN(temp)) { //não é possível escrever var x === NaN; NaN is unwritable
+		alert("Temperature value must be a number.");
+	} else {
 		if (document.getElementById('input_kelvin').selected) {
 			input_scale = " Kelvin"
 			if (temp < 0) {
@@ -57,8 +59,8 @@ function calcTemp() {
 				result = calcFahrenheit(temp);
 			}
 		}
-
-	document.getElementById("answer").innerHTML = temp + input_scale + " equals to " + result;
-	document.getElementById("answer-box").setAttribute("class", "alert alert-warning");
-	document.getElementById("answer-box").setAttribute("role", "alert");
+		document.getElementById("answer").innerHTML = temp + input_scale + " equals to " + result;
+		document.getElementById("answer-box").setAttribute("class", "alert alert-warning");
+		document.getElementById("answer-box").setAttribute("role", "alert");
+	}
 }
