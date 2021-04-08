@@ -1,3 +1,17 @@
+document.getElementById("input-scale").addEventListener("change", myFunction);
+
+function myFunction() {
+	/*var elements = document.getElementsByClassName("reset");
+	console.log (elements)
+	for (var i = 0; i < elements.length; i++) {
+		elements[i].setAttribute("class", "d-inline-block");
+	}*/
+
+	var scaleValue = "output_" + document.getElementById("input-scale").value;
+ 	//alert (scaleValue);
+	document.getElementById(scaleValue).setAttribute("class", "d-none");
+}
+
 function calcKelvin(temp) {
 	if (document.getElementById('output_celsius').selected) {
 		return (temp - 273.15).toFixed(2) + ' degrees Celsius';
