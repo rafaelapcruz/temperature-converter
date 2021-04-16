@@ -1,15 +1,25 @@
-document.getElementById("input-scale").addEventListener("change", myFunction);
+document.getElementById("input-scale").addEventListener("change", conditionalDropdown);
 
-function myFunction() {
-	/*var elements = document.getElementsByClassName("reset");
-	console.log (elements)
-	for (var i = 0; i < elements.length; i++) {
-		elements[i].setAttribute("class", "d-inline-block");
-	}*/
+document.getElementById("button").addEventListener("click", resetSecondDropdown);
 
-	var scaleValue = "output_" + document.getElementById("input-scale").value;
- 	//alert (scaleValue);
-	document.getElementById(scaleValue).setAttribute("class", "d-none");
+
+function conditionalDropdown() {
+	var inputScaleValue = document.getElementById("input-scale").value;
+ 	var outputOptions = document.getElementsByClassName("output");
+ 	console.log (inputScaleValue, outputOptions);
+ 	for (var i = 0; i < outputOptions.length; i++) {
+ 		if (outputOptions[i].value == inputScaleValue) {
+ 			outputOptions[i].setAttribute("hidden", "");
+ 		}
+ 	}
+}
+
+function resetSecondDropdown() {
+	var outputOptions = document.getElementsByClassName("output");
+	console.log (outputOptions)
+	for (var i = 0; i < outputOptions.length; i++) {
+		outputOptions[i].removeAttribute("hidden"); //.setAttribute("class", "d-inline-block") or element.classList.remove("d-none");
+	}
 }
 
 function calcKelvin(temp) {
