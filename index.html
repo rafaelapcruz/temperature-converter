@@ -23,10 +23,11 @@
 					</div>
 					<div class="col-md-6">
 					<label for="input-scale" class="form-label">Temperature scale:</label>
-					<select id="input-scale" class="form-select">
-						<option name="scale" id="input_kelvin" value="kelvin">Kelvin</option>
-						<option name="scale" id="input_celsius" value="celsius">Celsius</option>
-						<option name="scale" id="input_fahrenheit" value="fahrenheit">Fahrenheit</option>
+					<select id="input-scale" class="form-select" onchange="conditionalDropdown();">
+						<option name="scale" id="default" value="default" selected disabled>Choose a scale</option>
+						<option name="scale" id="input-kelvin" value="kelvin">Kelvin</option>
+						<option name="scale" id="input-celsius" value="celsius">Celsius</option>
+						<option name="scale" id="input-fahrenheit" value="fahrenheit">Fahrenheit</option>
 					</select>
 					</div>
 				</form>
@@ -34,11 +35,7 @@
 			<div id="output-box">
 				<form>
 					<label for="output-scale" class="form-label">Convert to:</label>
-					<select id="output-scale" class="form-select">
-						<option name="scale" id="output_kelvin" class="output" value="kelvin">Kelvin</option>
-						<option name="scale" id="output_celsius" class="output" value="celsius">Celsius</option>
-						<option name="scale" id="output_fahrenheit" class="output" value="fahrenheit">Fahrenheit</option>
-					</select>
+					<select id="output-scale" class="form-select"></select>				
 				</form>
 			</div>
 			<div id="button">
